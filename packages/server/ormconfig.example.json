@@ -1,0 +1,9 @@
+{
+  "type": "",
+  "url": "",
+  "entities": ["dist/entities/*.js"],
+  "migrations": ["dist/migrations/*.js"],
+  "cli": {
+    "migrationsDir": "src/migrations"
+  }
+}

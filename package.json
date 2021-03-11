@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/shared/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn workspaces run build",
+    "test": "jest --passWithNoTests",
+    "clean": "rimraf packages/**/{dist,build}"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.33",
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3"
+  }
+}
