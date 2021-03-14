@@ -1,7 +1,8 @@
+import { UserProvider } from '@auth0/nextjs-auth0';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Provider as StoreProvider } from 'react-redux';
-import store from '../redux/store';
+import store from '../store/store';
 import '../styles/globals.css';
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -16,7 +17,9 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name='description' content='Pern Template' />
       </Head>
       <StoreProvider store={store}>
-        <Component {...pageProps} />
+        <UserProvider>
+          <Component {...pageProps} />
+        </UserProvider>
       </StoreProvider>
     </>
   );
