@@ -4,6 +4,7 @@ WORKDIR /usr/src/pern-template
 
 COPY package.json ./
 COPY yarn.lock ./
+COPY .env ./
 
 COPY packages/server packages/server
 COPY packages/shared packages/shared
