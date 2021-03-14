@@ -8,7 +8,7 @@ COPY yarn.lock ./
 COPY packages/server packages/server
 COPY packages/shared packages/shared
 
-RUN yarn install --production
+RUN yarn install
 
 RUN yarn build
 
