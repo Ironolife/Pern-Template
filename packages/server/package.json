@@ -9,8 +9,8 @@
     "dev": "nodemon dist/index.js",
     "build": "tsc",
     "genenv": "gen-env-types .env -o src/@types/env.d.ts -e .",
-    "mig-g": "typeorm migration:generate -n UpdateTables --pretty",
-    "mig-c": "typeorm migration:create -n Migration"
+    "migra:g": "typeorm migration:generate -n UpdateTables --pretty",
+    "migra:c": "typeorm migration:create -n Migration"
   },
   "dependencies": {
     "@pern-template/constants": "*",
