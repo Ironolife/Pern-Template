@@ -1,7 +1,10 @@
+import dotenv from 'dotenv';
 import { MiddlewareFn } from 'type-graphql';
 import AppContext from '../@types/AppContext';
 import User from '../entities/User';
 import validate from '../utils/jwt';
+
+dotenv.config();
 
 const isAuth: MiddlewareFn<AppContext> = async ({ context }, next) => {
   const { authorization } = context.req.headers;
