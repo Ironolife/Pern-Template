@@ -8,7 +8,7 @@ dotenv.config();
 
 const isAuth: MiddlewareFn<AppContext> = async ({ context }, next) => {
   const { authorization } = context.req.headers;
-  if (!authorization) throw new Error('Missing authorization header.');
+  if (!authorization) throw new Error('Missing authorization header');
 
   const result = (await validate(authorization)) as any;
 

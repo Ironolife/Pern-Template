@@ -11,7 +11,7 @@ const authLink = setContext(async (_, previousContext) => {
 
   const res = await fetch('/api/auth/accessToken');
   if (res.status !== 200) {
-    const err = new Error('Missing access token.');
+    const err = new Error('Missing access token');
     console.error(err.message);
     throw err;
   }

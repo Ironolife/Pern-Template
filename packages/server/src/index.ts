@@ -8,7 +8,7 @@ import { createConnection } from 'typeorm';
 import { IS_PROD } from '@pern-template/constants';
 import AppContext from './@types/AppContext';
 import UserResolver from './resolvers/user/user';
-import dataLoader from './utils/dataLoader';
+import createDataLoader from './utils/createDataLoader';
 import User from './entities/User';
 
 dotenv.config();
@@ -42,7 +42,7 @@ const main = async () => {
       req,
       res,
       dataLoaders: {
-        userLoader: dataLoader(User, 'id'),
+        userLoader: createDataLoader(User, 'id'),
       },
     }),
   });

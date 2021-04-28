@@ -1,15 +1,20 @@
 import DataLoader from 'dataloader';
-import { EntityTarget, getManager, In } from 'typeorm';
+import { ClassType } from 'type-graphql';
+import { BaseEntity, getRepository, In } from 'typeorm';
 
-const dataLoader = <T extends object, K extends keyof T, V extends T[K]>(
-  entityTarget: EntityTarget<T>,
+const createDataLoader = <
+  T extends BaseEntity,
+  K extends keyof T,
+  V extends T[K]
+>(
+  Entity: ClassType<T>,
   key: K,
   relations?: K[]
 ) =>
   new DataLoader(async (values: readonly V[]) => {
-    const manager = getManager();
+    const repository = getRepository(Entity);
 
-    const entities = await manager.find(entityTarget, {
+    const entities = await repository.find({
       where: { [key]: In(values as V[]) },
       relations: relations as string[],
     });
@@ -20,4 +25,4 @@ const dataLoader = <T extends object, K extends keyof T, V extends T[K]>(
     return values.map((value) => map.get(value));
   });
 
-export default dataLoader;
+export default createDataLoader;
