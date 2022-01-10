@@ -1,0 +1,36 @@
+POST http://localhost:4000/auth/register
+Content-Type: application/json
+
+{
+  "username": "user01",
+  "email": "user01@example.com",
+  "password": "user01"
+}
+
+###
+
+POST http://localhost:4000/auth/login
+Content-Type: application/json
+
+{
+  "usernameOrEmail": "user01",
+  "password": "user01"
+}
+
+###
+
+POST http://localhost:4000/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJja3k4c2szMWcwMDAwNHNnNXdwN3FlYWcwIiwiaWF0IjoxNjQxODI3ODY5fQ.UkGaRgODoGDtLOqzxfPg1NS0zxsZK-ipq9M01spUCoU"
+}
+
+###
+
+DELETE http://localhost:4000/auth/logout
+Content-Type: application/json
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJja3k4c2szMWcwMDAwNHNnNXdwN3FlYWcwIiwiaWF0IjoxNjQxODI5NDIwfQ.8ufOG96HczOly9ehjpsiIUYxEC6j4C11GDMn1x4PG9s"
+}
