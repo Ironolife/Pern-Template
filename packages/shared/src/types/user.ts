@@ -8,7 +8,7 @@ export const userProfileArgs = Prisma.validator<Prisma.UserArgs>()({
     email: true,
     username: true,
   },
-} as Prisma.UserArgs);
+});
 
 export type UserProfile = Prisma.UserGetPayload<typeof userProfileArgs>;
 

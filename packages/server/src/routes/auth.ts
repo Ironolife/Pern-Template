@@ -148,7 +148,7 @@ auth.post(
     const redisKey = `${process.env.REDIS_PREFIX}:refreshTokens:${authPayload.userId}`;
     const isInRedis = await redis.sismember(redisKey, refreshToken);
 
-    if (!isInRedis) return res.sendStatus(401);
+    if (!isInRedis) return res.sendStatus(404);
 
     const user = await prisma.user.findUnique({
       where: { id: authPayload.userId },

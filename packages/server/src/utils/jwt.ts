@@ -1,7 +1,7 @@
 import { AuthPayload } from '#server/@types/auth';
 import { sign, verify } from 'jsonwebtoken';
 
-const ACCESS_TOKEN_LIFETIME = '5m';
+const ACCESS_TOKEN_LIFETIME = '1m';
 
 export const signAccessToken = (payload: AuthPayload) =>
   sign(payload, process.env.ACCESS_TOKEN_SECRET, {

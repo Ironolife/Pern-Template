@@ -10,6 +10,8 @@ export const errorHandler = async (
 ) => {
   if (!err) return next();
 
+  console.error(err);
+
   // Create error log in db
   await prisma.errorLog.create({
     data: {
