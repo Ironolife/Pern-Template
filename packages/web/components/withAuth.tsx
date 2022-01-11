@@ -2,6 +2,7 @@ import { useAuthStore } from '#web/stores/auth.store';
 import { useRouter } from 'next/router';
 import React, { useEffect, VFC } from 'react';
 
+// Routes guard HOC
 const WithAuth =
   (Component: VFC, reverse = false) =>
   () => {

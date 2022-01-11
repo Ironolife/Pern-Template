@@ -1,3 +1,4 @@
+import Header from '#web/components/Header/Header';
 import AuthProvider from '#web/providers/AuthProvider';
 import MuiThemeProvider from '#web/providers/MuiThemeProvider';
 import ReactQueryProvider from '#web/providers/ReactQueryProvider';
@@ -8,6 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ReactQueryProvider>
       <MuiThemeProvider>
         <AuthProvider>
+          <Header />
           <Component {...pageProps} />
         </AuthProvider>
       </MuiThemeProvider>

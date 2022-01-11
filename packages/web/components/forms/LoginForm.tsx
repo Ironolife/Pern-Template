@@ -35,7 +35,7 @@ const LoginForm: VFC = () => {
   });
 
   const loginMutation = useMutation(login);
-  const setAuth = useAuthStore(({ setAuth }) => setAuth);
+  const { setAuth } = useAuthStore(({ setAuth }) => ({ setAuth }));
   const router = useRouter();
 
   const onSubmit: SubmitHandler<LoginFormValues> = (formValues) => {

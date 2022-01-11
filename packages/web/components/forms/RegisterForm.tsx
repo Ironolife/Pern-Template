@@ -36,7 +36,7 @@ const RegisterForm: VFC = () => {
   });
 
   const registerMutation = useMutation(register);
-  const setAuth = useAuthStore(({ setAuth }) => setAuth);
+  const { setAuth } = useAuthStore(({ setAuth }) => ({ setAuth }));
   const router = useRouter();
 
   const onSubmit: SubmitHandler<RegisterFormValues> = (formValues) => {
