@@ -1,7 +1,7 @@
 import { AuthResponse } from '@pern-template/shared';
 import cookie from 'js-cookie';
 
-const COOKIE_NAME = 'pern-template:auth';
+const COOKIE_NAME = `${process.env.NEXT_PUBLIC_COOKIE_PREFIX}:auth`;
 const COOKIE_LIFETIME = 365; // 1 year
 
 export const setAuthCookie = (tokens: AuthResponse) => {
