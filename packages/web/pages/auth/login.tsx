@@ -6,7 +6,7 @@ import React, { VFC } from 'react';
 
 const Login: VFC = () => {
   return (
-    <Stack py={8} px={4} mx='auto' maxWidth='sm' spacing={8}>
+    <Stack component='main' py={8} px={4} mx='auto' maxWidth='sm' spacing={8}>
       <Typography component='h1' variant='h4'>
         Login
       </Typography>
